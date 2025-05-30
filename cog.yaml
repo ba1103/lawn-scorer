@@ -1,0 +1,8 @@
+build:
+  python_version: "3.9"
+  python_packages:
+    - torch
+    - torchvision
+    - pillow
+
+predict: "predict.py:Predictor"
