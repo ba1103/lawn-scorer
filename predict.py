@@ -1,11 +1,12 @@
 from PIL import Image, ImageStat, ImageFilter
 import numpy as np
-from cog import BasePredictor, Input
+from cog import BasePredictor, Input, Path
 
 class Predictor(BasePredictor):
-    def predict(self, image: Image = Input(description="Image of a lawn")) -> float:
+    def predict(self, image: Path = Input(description="Image of a lawn")) -> float:
         # Resize and convert to RGB
-        image = image.convert("RGB").resize((224, 224))
+        image = Image.open(str(image)).convert("RGB").resize((224, 224))
+
         np_img = np.array(image)
 
         # ---------- GREEN RATIO ----------

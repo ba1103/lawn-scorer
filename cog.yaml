@@ -1,9 +1,6 @@
 build:
   python_version: "3.9"
-  python_packages:
-    - torch==1.13.1
-    - torchvision==0.14.1
-    - pillow
+  python_requirements: requirements.txt
 
 predict: "predict.py:Predictor"
 
